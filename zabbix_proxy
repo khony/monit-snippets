@@ -1,0 +1,6 @@
+
+echo "check process zabbix-proxy with pidfile /var/run/zabbix/zabbix_proxy.pid
+	start program = \"/etc/init.d/zabbix-proxy start\"
+	stop program = \"/etc/init.d/zabbix-proxy stop\"
+	if failed port 10051 then restart
+	if 5 restarts within 5 cycles then timeout" > /etc/monit/conf.d/zabbix_proxy
